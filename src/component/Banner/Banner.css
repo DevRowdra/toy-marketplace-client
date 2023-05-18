@@ -1,0 +1,5 @@
+.background-img {
+    background-image: url('../../assets/child-with-red-car.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
