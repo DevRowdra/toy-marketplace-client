@@ -1,9 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+
 import app from '../../firebase.config';
+
 export const AuthContext=createContext(null)
 const AuthProvider = ({children}) => {
-    const auth=getAuth(app)
+   const auth=getAuth(app)
 const[user,setUser]=useState(null)
 const[loader,setLoader]=useState(true)
 
@@ -33,14 +35,14 @@ useEffect(()=>{
     }
 },[])
 
-
+const names={name:'rowdra'}
 
     const authInfo={
-user,loader,loginWithGoogle,createUser,loginUser,logOutUser
+user,loader,loginWithGoogle,createUser,loginUser,logOutUser,names
     }
     return (
         <AuthContext.Provider value={authInfo}>
-            
+            {children}
         </AuthContext.Provider>
     );
 };
