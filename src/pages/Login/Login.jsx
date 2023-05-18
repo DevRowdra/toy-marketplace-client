@@ -1,10 +1,14 @@
 import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import GoogleLogin from '../../component/GoogleLogin/GoogleLogin';
 
 const Login = () => {
   const{loginUser}=useContext(AuthContext)
+  const location=useLocation()
+  console.log(location)
+  const navigate=useNavigate()
+  const frome=location.state?.from?.pathname || '/'
     const handleLogin=(e)=>{
       e.preventDefault();
       const form = e.target;
@@ -15,6 +19,7 @@ const Login = () => {
       .then(result=>{
         const userCu=result.user
         console.log(userCu)
+        navigate(frome || { replace: true })
       })
       .catch(error=>{
         console.log(error.message)
@@ -50,7 +55,7 @@ const Login = () => {
           <button className="btn btn-primary">Register</button>
         </div>
       </form>
-      <GoogleLogin></GoogleLogin>
+      <GoogleLogin frome={frome}></GoogleLogin>
     </div>
   </div>
 </div>

@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { FaBeer, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from "firebase/auth";
-const GoogleLogin = () => {
+import { useNavigate } from 'react-router-dom';
+const GoogleLogin = ({frome}) => {
     const {loginWithGoogle}=useContext(AuthContext)
-  
+  const navigate=useNavigate()
 
 const googleProvider = new GoogleAuthProvider();
     const handleGoogleLogin=()=>{
@@ -12,6 +13,7 @@ const googleProvider = new GoogleAuthProvider();
          .then(result=>{
             const userCr=result.user
             console.log(userCr)
+            navigate(frome || { replace: true })
          })
          .catch(error=>{
             console.log(error.message)

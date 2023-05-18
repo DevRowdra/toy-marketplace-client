@@ -24,6 +24,7 @@ setLoader(true)
 return signOut(auth)
 }
 const loginWithGoogle=(provider)=>{
+    setLoader(true)
     return signInWithPopup(auth,provider)
 }
 useEffect(()=>{
