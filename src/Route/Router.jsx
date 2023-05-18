@@ -44,6 +44,7 @@ const router=createBrowserRouter([
             {
                 path: '/toy/:id',
                 element:<ToyDetails></ToyDetails>,
+                
               },
             {
                 path: '/blog',
