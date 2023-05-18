@@ -8,19 +8,31 @@ const AddAToy = () => {
     e.preventDefault();
     console.log('first');
     const form=e.target
-    const picture=form.pictureUrl.value
+    const pictureUrl=form.pictureUrl.value
     const toyName=form.toyName.value
     const sellerName=form.sellerName.value
-    const sellerEmail=form.sellerEmail.value
+    const sellerEmail=form?.sellerEmail?.value
     const subCategory=form.subCategory.value
     const price=form.price.value
     const rating=form.rating.value
     const quantity=form.quantity.value
     const description=form.quantity.value
     const addToyInfo={
-        picture,toyName,sellerName,sellerEmail,subCategory,price,rating,quantity,description
+        pictureUrl,toyName,sellerName,sellerEmail,subCategory,price,rating,quantity,description
     }
     console.log(addToyInfo)
+    fetch('http://localhost:3000/alltoy',{
+        method:'POST',
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body:JSON.stringify(addToyInfo)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data)
+    })
+    
   };
   return (
     <div>
@@ -36,6 +48,7 @@ const AddAToy = () => {
         id="pictureUrl"
         name="pictureUrl"
         placeholder="Enter Picture URL"
+        required
         className="w-full px-3 py-2 border border-gray-300 rounded"
       />
     </div>
@@ -46,7 +59,7 @@ const AddAToy = () => {
       <input
         type="text"
         id="name"
-        name="toyName"
+        name="toyName" required
         placeholder="Enter Toy Name"
         className="w-full px-3 py-2 border border-gray-300 rounded"
       />
@@ -58,7 +71,7 @@ const AddAToy = () => {
       <input
         type="text"
         id="name"
-        name="sellerName"
+        name="sellerName" required
         placeholder="Enter Seller Name"
         value={user.displayName ?    user.displayName :''     }
         className="w-full px-3 py-2 border border-gray-300 rounded"
@@ -71,7 +84,7 @@ const AddAToy = () => {
       <input
         type="text"
         id="name"
-        name="sellerEmail"
+        name="sellerEmail" required
         placeholder="Enter Seller Email"
         className="w-full px-3 py-2 border border-gray-300 rounded"
         value={user.email}
@@ -85,7 +98,7 @@ const AddAToy = () => {
         type="text"
         id="name"
         name="subCategory"
-        placeholder="Enter Sub-category"
+        placeholder="Enter Sub-category" required
         className="w-full px-3 py-2 border border-gray-300 rounded"
       />
     </div>
@@ -97,7 +110,7 @@ const AddAToy = () => {
         type="text"
         id="name"
         name="price"
-        placeholder="Enter Price"
+        placeholder="Enter Price" required
         className="w-full px-3 py-2 border border-gray-300 rounded"
       />
     </div>
@@ -130,7 +143,7 @@ const AddAToy = () => {
         type="number"
         id="name"
         name="quantity"
-        placeholder="Enter Available quantity"
+        placeholder="Enter Available quantity" required
         className="w-full px-3 py-2 border border-gray-300 rounded"
       />
     </div>
@@ -142,7 +155,7 @@ const AddAToy = () => {
         rows="4" 
         cols="50"
         id="name"
-        name="description"
+        name="description" required
         placeholder="Enter Detail description"
         className="w-full px-3 py-2 border border-gray-300 rounded"
       />
