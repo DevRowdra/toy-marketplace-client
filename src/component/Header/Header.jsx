@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import UserProfile from '../UserProfile/UserProfile';
+import logo from '../../assets/logo.jpg'
 
 const Header = () => {
   const{user,logOutUser,userName}=useContext(AuthContext)
@@ -44,20 +45,39 @@ logOutUser()
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-              <Link to={'/'}>Home</Link>
-              </li>
-              <li tabIndex={0}>
-                <a className="justify-between">
-                  Parent
-                 
-                </a>
-                
-              </li>
-              <li>
-                <Link to={'/login'}>Login</Link>
-              </li>
+            <Link to={'/'}>Home</Link>
+            </li>
+            <li>
+            <Link to={'/alltoy'} >All Toy</Link>
+            </li>
+            <li>
+            <Link to={'/blog'} >Blog</Link>
+            </li>
+           {user ?<>
+            
+            
+           
+            <li>
+            <Link to={'/mytoy'} >My Toy</Link>
+            </li>
+            <li>
+            <Link to={'/addatoy'} >Add A Toy</Link>
+            </li>
+            <li>
+              <UserProfile></UserProfile>
+            </li>
+            
+           
+            
+            </> : <> 
+            
+             <li>
+            <Link to={'/login'}>Log In </Link>
+            </li></>
+            }
             </ul>
           </div>
+          <img className='h-11 sm:w-9 lg:w-16' src={logo} alt="" />
           <a className="btn btn-ghost normal-case text-xl">Speedy Toys</a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -72,13 +92,7 @@ logOutUser()
             <Link to={'/blog'} >Blog</Link>
             </li>
            {user ?<>
-            {/* <li >
-              <a>
-                {user?.displayName || userName}
-                
-              </a>
-              
-            </li> */}
+            
             
            
             <li>
