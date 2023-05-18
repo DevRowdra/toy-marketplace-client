@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import UserProfile from '../UserProfile/UserProfile';
 
 const Header = () => {
   const{user,logOutUser,userName}=useContext(AuthContext)
@@ -64,25 +65,46 @@ logOutUser()
             <li>
             <Link to={'/'}>Home</Link>
             </li>
-           {user ?<> <li tabIndex={0}>
+            <li>
+            <Link to={'/alltoy'} >All Toy</Link>
+            </li>
+            <li>
+            <Link to={'/blog'} >Blog</Link>
+            </li>
+           {user ?<>
+            {/* <li >
               <a>
                 {user?.displayName || userName}
                 
               </a>
               
+            </li> */}
+            
+           
+            <li>
+            <Link to={'/mytoy'} >My Toy</Link>
             </li>
             <li>
-            <Link onClick={handleLogOut}>Log Out</Link>
-            </li></> : <> <li>
+            <Link to={'/addatoy'} >Add A Toy</Link>
+            </li>
+            <li>
+              <UserProfile></UserProfile>
+            </li>
+            
+           
+            
+            </> : <> 
+            
+             <li>
             <Link to={'/login'}>Log In </Link>
             </li></>
             }
             
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Get started</a>
-        </div>
+        {user && <div className="navbar-end">
+        <Link className='btn' onClick={handleLogOut}>Log Out</Link>
+        </div>}
       </div>
     </div>
   );
