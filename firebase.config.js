@@ -4,14 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-
+console.log(import.meta.env.VITE_apiKey)
 const firebaseConfig = {
-  apiKey: "AIzaSyCJqfpET5QMIw3qflehAd7im_RM_f9t4gc",
-  authDomain: "toy-marketplace-assi-11.firebaseapp.com",
-  projectId: "toy-marketplace-assi-11",
-  storageBucket: "toy-marketplace-assi-11.appspot.com",
-  messagingSenderId: "978886310214",
-  appId: "1:978886310214:web:6e9055b46c2c9dfb448d47"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain:  import.meta.env.VITE_authDomain,
+  projectId:  import.meta.env.VITE_projectId,
+  storageBucket:  import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId:  import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
