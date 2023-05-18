@@ -1,9 +1,12 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+import GoogleLogin from '../../component/GoogleLogin/GoogleLogin';
 
 const Register = () => {
-  const {createUser,names}=useContext(AuthContext)
+  const {createUser,setPhoto,setUserName}=useContext(AuthContext)
+  const navigate=useNavigate()
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -11,22 +14,41 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
+    
     console.log(name, email, password, photo);
     createUser(email,password)
     .then(result=>{
       const user=result.user
+      updateUserNameAndPic(user,name,photo)
       console.log(user)
+      navigate('/')
     })
     .catch(error=>{
       console.log(error)
     })
   };
+  const updateUserNameAndPic=(user,name,photo)=>{
+    updateProfile(user,{
+      displayName:name,
+      photoURL:photo
+    })
+    .then(()=>{
+      console.log('update user name')
+      alert('user updated')
+      setPhoto(photo)
+      setUserName(name)
+      
+    })
+    .catch(error=>{
+      console.log(error.message)
+    })
+  }
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content  grid grid-cols-2  ">
           <div className="text-center  ">
-            <h1 className="text-5xl font-bold">Login now!</h1>
+            <h1 className="text-5xl font-bold">Register now!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form
@@ -85,7 +107,7 @@ const Register = () => {
                     to={'/login'}
                     className="label-text-alt link link-hover"
                   >
-                    New in this Site. Login Now
+                    Already have an Account. Login Now
                   </Link>
                 </label>
               </div>
@@ -93,6 +115,7 @@ const Register = () => {
                 <button className="btn btn-primary">Register Now</button>
               </div>
             </form>
+     <GoogleLogin></GoogleLogin>
           </div>
         </div>
       </div>

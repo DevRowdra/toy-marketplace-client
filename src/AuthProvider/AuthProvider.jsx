@@ -7,6 +7,8 @@ export const AuthContext=createContext(null)
 const AuthProvider = ({children}) => {
    const auth=getAuth(app)
 const[user,setUser]=useState(null)
+const [photo,setPhoto]=useState('')
+const[userName,setUserName]=useState('')
 const[loader,setLoader]=useState(true)
 
 const createUser=(email,password)=>{
@@ -38,7 +40,7 @@ useEffect(()=>{
 const names={name:'rowdra'}
 
     const authInfo={
-user,loader,loginWithGoogle,createUser,loginUser,logOutUser,names
+user,loader,loginWithGoogle,createUser,loginUser,logOutUser,setPhoto,photo,setUserName,userName
     }
     return (
         <AuthContext.Provider value={authInfo}>

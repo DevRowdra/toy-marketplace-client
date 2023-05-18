@@ -1,11 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import GoogleLogin from '../../component/GoogleLogin/GoogleLogin';
 
 const Login = () => {
+  const{loginUser}=useContext(AuthContext)
     const handleLogin=(e)=>{
-        e.preventDefault()
-        const form=e.target
-        console.log(form.name.value)
+      e.preventDefault();
+      const form = e.target;
+      const email = form.email.value;
+      const password = form.password.value;
+      console.log(email,password)
+      loginUser(email,password)
+      .then(result=>{
+        const userCu=result.user
+        console.log(userCu)
+      })
+      .catch(error=>{
+        console.log(error.message)
+      })
     }
    
     return (
@@ -22,13 +35,13 @@ const Login = () => {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="text" placeholder="email" className="input input-bordered" />
+          <input type="text" placeholder="email" className="input input-bordered" name='email' required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="text" placeholder="password" className="input input-bordered" />
+          <input type="text" placeholder="password" className="input input-bordered" name='password' required />
           <label className="label">
             <Link to={'/register'} className="label-text-alt link link-hover">Already Have An Account.Login Now.</Link>
           </label>
@@ -37,6 +50,7 @@ const Login = () => {
           <button className="btn btn-primary">Register</button>
         </div>
       </form>
+      <GoogleLogin></GoogleLogin>
     </div>
   </div>
 </div>
