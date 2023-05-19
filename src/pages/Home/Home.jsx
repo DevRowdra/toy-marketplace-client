@@ -4,6 +4,7 @@ import Gallery from '../../component/Gallery/Gallery';
 import ReactTabs from '../../component/ReactTabs/ReactTabs';
 import NewsLetter from '../../component/NewsLetter/NewsLetter';
 import Loader from '../../component/Loader/Loader';
+import ReactMarquee from '../../component/ReactMarquee/ReactMarquee';
 
 const Home = () => {
     return (
@@ -11,7 +12,7 @@ const Home = () => {
             
             <Banner></Banner>
             <Gallery></Gallery>
-            
+            <ReactMarquee></ReactMarquee>
             <ReactTabs></ReactTabs>
             <NewsLetter></NewsLetter>
         </div>
