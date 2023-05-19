@@ -48,7 +48,7 @@ const ReactTabs = () => {
                 <p>{ts.rating}</p>
                 <p>{ts.price}</p>
                 <div className="card-actions justify-end">
-                <Link to={`toy/${ts._id}`}> <button className="btn btn-primary">View Details</button></Link>
+                <Link to={`toy/${ts._id}`}> <button className="btn  btn-warning">View Details</button></Link>
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@ const ReactTabs = () => {
      <p>{ts.rating}</p>
      <p>{ts.price}</p>
      <div className="card-actions justify-end">
-     <Link to={`toy/${ts._id}`}> <button className="btn btn-primary">View Details</button></Link>
+     <Link to={`toy/${ts._id}`}> <button className="btn  btn-warning">View Details</button></Link>
      </div>
    </div>
  </div>
@@ -96,7 +96,7 @@ const ReactTabs = () => {
      <p>{ts.rating}</p>
      <p>{ts.price}</p>
      <div className="card-actions justify-end">
-      <Link to={`toy/${ts._id}`}> <button className="btn btn-primary">View Details</button></Link>
+      <Link to={`toy/${ts._id}`}> <button className="btn  btn-warning">View Details</button></Link>
      </div>
    </div>
  </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import Banner from '../../component/Banner/Banner';
 import Gallery from '../../component/Gallery/Gallery';
 import ReactTabs from '../../component/ReactTabs/ReactTabs';
+import NewsLetter from '../../component/NewsLetter/NewsLetter';
+import Loader from '../../component/Loader/Loader';
 
 const Home = () => {
     return (
@@ -9,8 +11,9 @@ const Home = () => {
             
             <Banner></Banner>
             <Gallery></Gallery>
-            <ReactTabs></ReactTabs>
             
+            <ReactTabs></ReactTabs>
+            <NewsLetter></NewsLetter>
         </div>
     );
 };
