@@ -13,11 +13,12 @@ const ToyDetails = () => {
         setSingleToy(data);
       });
   }, []);
+  console.log(singleToy.pictureUrl)
   return (
     <div className='grid grid-cols-2'>
       <div className='flex justify-end items-center pr-24 '>
         <img
-          src={singleToy?.pictureUrl}
+          src={singleToy.pictureUrl}
           className="max-w-sm rounded-lg  h-64 shadow-2xl "
         />
       </div>{' '}

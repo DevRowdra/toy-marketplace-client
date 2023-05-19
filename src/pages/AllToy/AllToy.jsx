@@ -21,10 +21,11 @@ const AllToy = () => {
               <th>
                 No
               </th>
-              <th>Seller</th>
               <th>Toy Name</th>
+              <th>Seller</th>
               <th>Sub-category</th>
               <th>Price</th>
+              <th>Rating</th>
               <th>Available Quantity</th>
               <th><button>View Details button</button></th>
             </tr>
@@ -36,21 +37,22 @@ const AllToy = () => {
                     <td>{index+1}</td>
                     
                     <td>
-                      <div className="flex items-center space-x-3">
+                   
                         
                         <div>
-                          <div className="font-bold">{toy.sellerName}</div>
-                          <div className="text-sm opacity-50">{toy.subCategory}</div>
+                          <div className="font-bold">{toy.name }</div>
+                          
                         </div>
-                      </div>
+                      
                     </td>
                     <td>
-                     {toy.name}
-                      <br />
+                     {toy.sellerName}
+                     
                      
                     </td>
                     <td>{toy.subCategory}</td>
                     <td>{toy.price} $</td>
+                    <td>{toy.rating} </td>
                     <td>{toy.quantity}</td>
                     <th>
                       <Link to={`/toy/${toy._id}`}><button className="btn  btn-warning ">details</button></Link>

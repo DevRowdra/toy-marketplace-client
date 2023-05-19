@@ -9,7 +9,7 @@ const AddAToy = () => {
     console.log('first');
     const form=e.target
     const pictureUrl=form.pictureUrl.value
-    const toyName=form.toyName.value
+    const name=form.toyName.value
     const sellerName=form.sellerName.value
     const sellerEmail=form?.sellerEmail?.value
     const subCategory=form.subCategory.value
@@ -18,7 +18,7 @@ const AddAToy = () => {
     const quantity=form.quantity.value
     const description=form.quantity.value
     const addToyInfo={
-        pictureUrl,toyName,sellerName,sellerEmail,subCategory,price,rating,quantity,description
+        pictureUrl,name,sellerName,sellerEmail,subCategory,price,rating,quantity,description
     }
     console.log(addToyInfo)
     fetch('http://localhost:3000/alltoy',{
