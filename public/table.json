@@ -1,0 +1,110 @@
+[
+    {
+      "pictureUrl": "https://i.ibb.co/wsQXxdk/police2.jpg",
+      "name": "Black Police Cruiser",
+      "sellerName": "Emily Wilson",
+      "sellerEmail": "emilywilson@example.com",
+      "subCategory": "policeCar",
+      "price": 19.99,
+      "rating": 4.3,
+      "quantity": 12,
+      "description": "The Black Police Cruiser is a realistic toy police car that comes with lights and sound effects. It features a sleek design, working doors, and a removable police officer figure. Let your child embark on thrilling police adventures with this cool toy!"
+    },
+    {
+      "pictureUrl": "https://i.ibb.co/W31mwFp/police1.jpg",
+      "name": "Police SUV",
+      "sellerName": "William Johnson",
+      "sellerEmail": "williamjohnson@example.com",
+      "subCategory": "policeCar",
+      "price": 24.99,
+      "rating": 4.7,
+      "quantity": 8,
+      "description": "The Police SUV is a sturdy and versatile toy vehicle used by law enforcement officers. It features realistic details, opening doors, and working sirens. Let your child play the role of a police officer and maintain law and order with this exciting toy!"
+    },
+    {
+        "pictureUrl": "https://i.ibb.co/DMFVnfL/police3.jpg",
+        "name": "SWAT Team Vehicle",
+        "sellerName": "Christopher Davis",
+        "sellerEmail": "christopherdavis@example.com",
+        "subCategory": "policeCar",
+        "price": 39.99,
+        "rating": 4.8,
+        "quantity": 5,
+        "description": "The SWAT Team Vehicle is a heavy-duty toy police truck used by Special Weapons and Tactics teams. It features a rugged design, working doors, and detachable accessories. Let your child engage in high-stakes rescue missions with this action-packed SWAT vehicle!"
+      },
+      {
+        "pictureUrl": "https://i.ibb.co/zhDwQZr/jeep2.jpg",
+        "name": "Green Monster Truck",
+        "sellerName": "David Anderson",
+        "sellerEmail": "davidanderson@example.com",
+        "subCategory": "monsterTruck",
+        "price": 29.99,
+        "rating": 4.6,
+        "quantity": 10,
+        "description": "The Green Monster Truck is a powerful and intimidating toy vehicle that can conquer any obstacle in its path. It features large wheels, a durable frame, and a high-performance motor. Let your child unleash the beast with this thrilling monster truck!"
+      },
+      {
+        "pictureUrl": "https://i.ibb.co/WWGCPYD/geep.jpg",
+        "name": "Orange Flame Monster Truck",
+        "sellerName": "Jennifer Lee",
+        "sellerEmail": "jenniferlee@example.com",
+        "subCategory": "monsterTruck",
+        "price": 34.99,
+        "rating": 4.9,
+        "quantity": 7,
+        "description": "The Orange Flame Monster Truck is a blazing hot toy vehicle that combines speed and style. It features a fiery flame design, oversized tires, and a robust suspension system. Watch your child ignite their imagination with this fiery monster truck!"
+      },
+
+     
+      {
+        "pictureUrl": "https://i.ibb.co/y8j9tbj/jeep3.jpg",
+        "name": "Blue Thunder Monster Truck",
+        "sellerName": "Mark Davis",
+        "sellerEmail": "markdavis@example.com",
+        "subCategory": "monsterTruck",
+        "price": 26.99,
+        "rating": 4.4,
+        "quantity": 9,
+        "description": "The Blue Thunder Monster Truck is a high-powered toy vehicle designed for extreme off-road action. It features a bold blue color, oversized wheels, and a suspension system that can handle any rough terrain. Let your child unleash the thunder with this amazing monster truck!"
+      },
+
+      
+
+      {
+        "pictureUrl": "https://i.ibb.co/Y3RTQFp/super3.jpg",
+        "name": "Red SuperCar",
+        "sellerName": "Emily Thompson",
+        "sellerEmail": "emilythompson@example.com",
+        "subCategory": "superCar",
+        "price": 49.99,
+        "rating": 4.9,
+        "quantity": 5,
+        "description": "The Red SuperCar is a sleek and stylish toy vehicle that brings the excitement of sports cars to the hands of children. Its aerodynamic design and powerful engine make it a favorite among car enthusiasts. Get ready for high-speed adventures with this stunning SuperCar!"
+      },
+      {
+        "pictureUrl": "https://i.ibb.co/6mwCt24/bugati2.jpg",
+        "name": "Blue SuperCar",
+        "sellerName": "Daniel Wilson",
+        "sellerEmail": "danielwilson@example.com",
+        "subCategory": "superCar",
+        "price": 59.99,
+        "rating": 4.8,
+        "quantity": 3,
+        "description": "The Blue SuperCar is a premium toy vehicle that combines elegance and power. Its striking blue color and sleek design make it a standout on any race track. Experience the thrill of speed and luxury with this remarkable SuperCar!"
+      },
+      {
+        "pictureUrl": "https://i.ibb.co/tpPCzyn/super1.jpg",
+        "name": "Silver SuperCar",
+        "sellerName": "Sophia Davis",
+        "sellerEmail": "sophiadavis@example.com",
+        "subCategory": "superCar",
+        "price": 69.99,
+        "rating": 4.7,
+        "quantity": 7,
+        "description": "The Silver SuperCar is the epitome of sophistication and performance. Its silver metallic finish and cutting-edge features make it a dream toy for car enthusiasts. Take control of this magnificent SuperCar and feel the adrenaline rush of driving in style!"
+      }
+      
+      
+      
+  ]
+  
