@@ -1,18 +1,20 @@
 import React from 'react';
 import { FaBeer } from 'react-icons/fa';
 import { AiFillDelete, AiTwotoneEdit,  } from "react-icons/ai";
-const MyToyRow = ({toy,handleMyToyDelete}) => {
-    console.log(toy)
+import { Link } from 'react-router-dom';
+const MyToyRow = ({toy,handleMyToyDelete,handleUpdateToy}) => {
+    // console.log(toy)
     const{subCategory,sellerName,sellerEmail,rating
 ,quantity,price
 ,pictureUrl,name,_id
-}=toy
+}=toy 
     return (
         <tr>
         <th>
           <button className="btn btn-circle btn-outline" title='Edit'>
-            
+            <Link to={`/mytoy/${_id}`}>
             <AiTwotoneEdit className='text-2xl'></AiTwotoneEdit>
+            </Link>
           </button>
         </th>
         <th>

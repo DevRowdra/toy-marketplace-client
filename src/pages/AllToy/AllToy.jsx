@@ -21,7 +21,7 @@ const AllToy = () => {
               <th>
                 No
               </th>
-              <th>Toy Name</th>
+              <th>Toy Name || Picture</th>
               <th>Seller</th>
               <th>Sub-category</th>
               <th>Price</th>
@@ -39,10 +39,17 @@ const AllToy = () => {
                     <td>
                    
                         
-                        <div>
-                          <div className="font-bold">{toy.name }</div>
-                          
-                        </div>
+                    <div className="flex items-center space-x-3">
+      <div className="avatar">
+        <div className="mask mask-squircle w-12 h-12">
+          <img src={toy.pictureUrl} alt="toy img" />
+        </div>
+      </div>
+      <div>
+        <div className="font-bold">{toy.name}</div>
+      
+      </div>
+    </div>
                       
                     </td>
                     <td>

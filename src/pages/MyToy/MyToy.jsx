@@ -1,28 +1,62 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import MyToyRow from '../../component/MyToyRow/MyToyRow';
+import Swal from 'sweetalert2'
 
 const MyToy = () => {
   const { user } = useContext(AuthContext);
   const [myToy, setMyToy] = useState([]);
-  console.log(user);
+  // console.log(user);
+  const urls=(`http://localhost:3000/mytoys/${user?.email}`)
   useEffect(() => {
-    fetch(`http://localhost:3000/mytoys/${user?.email}`)
+    fetch(urls)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setMyToy(data);
       });
   }, [user]);
+  const handleUpdateToy=(id)=>{
+    console.log(id)
+  }
   const handleMyToyDelete=(id)=>{
-    fetch(`http://localhost:3000/DeleteToy/${id}`,{
+
+   
+    
+   
+
+
+
+    fetch(`http://localhost:3000/toy/${id}`,{
       method:'DELETE'
     })
     .then(res=>res.json())
     .then(data=>{
-      console.log(data)
-      const filtering=myToy.filter(toy=> toy._id !== id)
-      setMyToy(filtering)
+      // console.log(data)
+      // const filtering=myToy.filter(toy=> toy._id !== id)
+      // setMyToy(filtering)
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+          console.log(data)
+          const filtering=myToy.filter(toy=> toy._id !== id)
+          setMyToy(filtering)
+          Swal.fire(
+            'Deleted Confirm!',
+            'Your file has been deleted.Success Fully',
+            'success'
+          )
+        }
+      })
+      
     })
     console.log(id)
   }
@@ -44,7 +78,7 @@ const MyToy = () => {
             </tr>
           </thead>
           <tbody>
-           {myToy.map(toy=><MyToyRow handleMyToyDelete={handleMyToyDelete} toy={toy}></MyToyRow>)}
+           {myToy.map(toy=><MyToyRow key={toy._id} handleMyToyDelete={handleMyToyDelete} handleUpdateToy={handleUpdateToy} toy={toy}></MyToyRow>)}
           </tbody>
         </table>
       </div>

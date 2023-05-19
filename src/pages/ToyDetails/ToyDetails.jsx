@@ -13,7 +13,6 @@ const ToyDetails = () => {
         setSingleToy(data);
       });
   }, []);
-  console.log(singleToy.pictureUrl)
   return (
     <div className='grid grid-cols-2'>
       <div className='flex justify-end items-center pr-24 '>
