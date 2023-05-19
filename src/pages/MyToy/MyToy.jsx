@@ -14,6 +14,18 @@ const MyToy = () => {
         setMyToy(data);
       });
   }, [user]);
+  const handleMyToyDelete=(id)=>{
+    fetch(`http://localhost:3000/DeleteToy/${id}`,{
+      method:'DELETE'
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data)
+      const filtering=myToy.filter(toy=> toy._id !== id)
+      setMyToy(filtering)
+    })
+    console.log(id)
+  }
   return (
     <div>
       <div className="overflow-x-auto">
@@ -32,7 +44,7 @@ const MyToy = () => {
             </tr>
           </thead>
           <tbody>
-           {myToy.map(toy=><MyToyRow toy={toy}></MyToyRow>)}
+           {myToy.map(toy=><MyToyRow handleMyToyDelete={handleMyToyDelete} toy={toy}></MyToyRow>)}
           </tbody>
         </table>
       </div>

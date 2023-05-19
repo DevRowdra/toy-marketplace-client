@@ -1,35 +1,22 @@
 import React from 'react';
 import { FaBeer } from 'react-icons/fa';
 import { AiFillDelete, AiTwotoneEdit,  } from "react-icons/ai";
-const MyToyRow = ({toy}) => {
+const MyToyRow = ({toy,handleMyToyDelete}) => {
     console.log(toy)
     const{subCategory,sellerName,sellerEmail,rating
 ,quantity,price
-,pictureUrl,name
+,pictureUrl,name,_id
 }=toy
     return (
         <tr>
         <th>
           <button className="btn btn-circle btn-outline" title='Edit'>
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg> */}
+            
             <AiTwotoneEdit className='text-2xl'></AiTwotoneEdit>
           </button>
         </th>
         <th>
-          <button className="btn btn-circle btn-outline" title='Delete'>
+          <button onClick={()=>handleMyToyDelete(_id)} className="btn btn-circle btn-outline" title='Delete'>
           <AiFillDelete className='text-2xl'></AiFillDelete>
           </button>
         </th>
