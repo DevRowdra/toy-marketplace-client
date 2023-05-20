@@ -9,6 +9,9 @@ const MyToy = () => {
   // console.log(user);
   const urls=(`http://localhost:3000/mytoys/${user?.email}`)
   useEffect(() => {
+   
+      document.title='Speed Toy || MyToy'
+  
     fetch(urls)
       .then((res) => res.json())
       .then((data) => {

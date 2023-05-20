@@ -4,11 +4,15 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import GoogleLogin from '../../component/GoogleLogin/GoogleLogin';
 
 const Login = () => {
+
   const{loginUser}=useContext(AuthContext)
   const location=useLocation()
   console.log(location)
   const navigate=useNavigate()
   const frome=location.state?.from?.pathname || '/'
+  useEffect(()=>{
+    document.title='Speed Toy || Login'
+  },[])
     const handleLogin=(e)=>{
       e.preventDefault();
       const form = e.target;

@@ -1,7 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2'
 const AddAToy = () => {
+  useEffect(()=>{
+    document.title='Speed Toy || AddAToy'
+  },[])
     const{user}=useContext(AuthContext)
     console.log(user.email)
   const handleSubmit = (e) => {

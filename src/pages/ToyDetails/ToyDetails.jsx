@@ -5,7 +5,10 @@ const ToyDetails = () => {
   const { id } = useParams();
   const [singleToy, setSingleToy] = useState([]);
   console.log(id);
-  useEffect(() => {
+  useEffect(() => { 
+   
+      document.title='Speed Toy || ToyDetails'
+   
     fetch(`http://localhost:3000/toy/${id}`)
       .then((res) => res.json())
       .then((data) => {

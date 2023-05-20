@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 const AllToy = () => {
     const[allToy,setAllToy]=useState([])
   useEffect(() => {
+    
+      document.title='Speed Toy || AllToy'
+    
     fetch('http://localhost:3000/alltoy')
       .then((res) => res.json())
       .then((data) => {

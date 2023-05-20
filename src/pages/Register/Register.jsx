@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
@@ -7,6 +7,9 @@ import GoogleLogin from '../../component/GoogleLogin/GoogleLogin';
 const Register = () => {
   const {createUser,setPhoto,setUserName}=useContext(AuthContext)
   const navigate=useNavigate()
+  useEffect(()=>{
+    document.title='Speed Toy || Register'
+  },[])
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;

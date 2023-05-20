@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const UpdateToy = () => {
@@ -14,7 +14,11 @@ const UpdateToy = () => {
     _id,
   } = toy;
   console.log(toy);
+  useEffect(()=>{
+    document.title='Speed Toy || UpdateToy'
+  },[])
   const handleUpdateToy = (e) => {
+
 e.preventDefault()
 const form=e.target
 const  price=form.price.value

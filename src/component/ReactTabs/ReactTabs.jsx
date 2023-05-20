@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import '../../../public/table.json';
+
 import { Link } from 'react-router-dom';
 const ReactTabs = () => {
   const [tabItem, setTabItem] = useState('policeCar');
@@ -15,7 +15,7 @@ const ReactTabs = () => {
         console.log(data);
         setTest(data);
       });
-  }, [url]);
+  }, [tabItem]);
   return (
     <Tabs
       forceRenderTabPanel
