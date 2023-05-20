@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AllToy = () => {
   const [allToy, setAllToy] = useState([]);
+  const [searchText,setSearchText]=useState("")
   useEffect(() => {
     document.title = 'Speed Toy || AllToy';
 
@@ -13,8 +14,28 @@ const AllToy = () => {
         setAllToy(data);
       });
   }, []);
+ const handleSearch=()=>{
+  fetch(`http://localhost:3000/searchToyName/${searchText}`)
+  .then((res) => res.json())
+  .then((data) => {
+    setAllToy(data);
+    console.log(data)
+    
+  });
+ }
   return (
     <div>
+
+
+
+      <dir className=" text-center">
+      <input onChange={(e)=>setSearchText(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-error w-full max-w-xs" />
+      <button className="btn rounded-md btn-warning   " onClick={handleSearch}>Search</button>
+      </dir>
+
+
+
+
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
