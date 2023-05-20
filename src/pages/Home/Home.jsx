@@ -15,8 +15,8 @@ const Home = () => {
             
             <Banner></Banner>
             <Gallery></Gallery>
-            <ReactMarquee></ReactMarquee>
             <ReactTabs></ReactTabs>
+            <ReactMarquee></ReactMarquee>
             <NewsLetter></NewsLetter>
         </div>
     );

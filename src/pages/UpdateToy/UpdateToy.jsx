@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
-
+import Swal from 'sweetalert2';
 const UpdateToy = () => {
   const toy = useLoaderData();
   const {
@@ -11,7 +11,7 @@ const UpdateToy = () => {
     name,
     _id,
   } = toy;
-  console.log(toy);
+  console.log('hi', toy);
   useEffect(() => {
     document.title = 'Speed Toy || UpdateToy';
   }, []);
@@ -27,7 +27,7 @@ const UpdateToy = () => {
       description,
     };
     console.log(updateToy);
-    fetch(`https://toy-marketplace-server-livid.vercel.app/toy/${_id}`, {
+    fetch(`http://localhost:3000/toy/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -37,6 +37,14 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.modifiedCount>0) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Your Toy info updated',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
       });
   };
   return (

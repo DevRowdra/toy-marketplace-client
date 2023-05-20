@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-
+import { BiDollar } from "react-icons/bi";
+import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 const ReactTabs = () => {
   const [tabItem, setTabItem] = useState('policeCar');
@@ -27,14 +28,14 @@ const ReactTabs = () => {
       <TabPanel>
         <Tabs forceRenderTabPanel>
           <TabList className="text-center">
-            <Tab onClick={() => setTabItem('policeCar')}>Police Car</Tab>
+            <Tab  onClick={() => setTabItem('policeCar')}>Police Car</Tab>
             <Tab onClick={() => setTabItem('monsterTruck')}>Monster Truck</Tab>
             <Tab onClick={() => setTabItem('superCar')}>Super Car</Tab>
           </TabList>
-          <TabPanel>
+          <TabPanel >
             <div className="grid grid-cols-1 md:grid-cols-3">
               {test.map((ts) => (
-                <div>
+                <div key={ts._id}>
                   {' '}
                   <div className="card w-96 bg-base-100 shadow-xl">
                     <figure>
@@ -44,14 +45,14 @@ const ReactTabs = () => {
                         alt="Shoes"
                       />
                     </figure>
-                    <div className="card-body">
-                      <h2 className="card-title">{ts.name}</h2>
-                      <p>{ts.rating}</p>
-                      <p>{ts.price}</p>
-                      <div className="card-actions justify-end">
+                    <div className="card-body text-center">
+                      <h2 className=" text-center text-2xl font-semibold">{ts.name}</h2>
+                      <p><FaStar className='inline mr-2'></FaStar>{ts.rating}</p>
+                      <p> <BiDollar className='inline ' ></BiDollar> {ts.price}</p>
+                      <div className="card-actions justify-center mt-3">
                         <Link to={`toy/${ts._id}`}>
                           {' '}
-                          <button className="btn  btn-warning">
+                          <button className="btn text-center btn-warning">
                             View Details
                           </button>
                         </Link>
@@ -75,14 +76,14 @@ const ReactTabs = () => {
                         alt="Shoes"
                       />
                     </figure>
-                    <div className="card-body">
-                      <h2 className="card-title">{ts.name}</h2>
-                      <p>{ts.rating}</p>
-                      <p>{ts.price}</p>
-                      <div className="card-actions justify-end">
+                    <div className="card-body text-center">
+                      <h2 className=" text-center text-2xl font-semibold">{ts.name}</h2>
+                      <p><FaStar className='inline mr-2'></FaStar>{ts.rating}</p>
+                      <p> <BiDollar className='inline ' ></BiDollar> {ts.price}</p>
+                      <div className="card-actions justify-center mt-3">
                         <Link to={`toy/${ts._id}`}>
                           {' '}
-                          <button className="btn  btn-warning">
+                          <button className="btn text-center btn-warning">
                             View Details
                           </button>
                         </Link>
@@ -106,14 +107,14 @@ const ReactTabs = () => {
                         alt="Shoes"
                       />
                     </figure>
-                    <div className="card-body">
-                      <h2 className="card-title">{ts.name}</h2>
-                      <p>{ts.rating}</p>
-                      <p>{ts.price}</p>
-                      <div className="card-actions justify-end">
+                    <div className="card-body text-center">
+                      <h2 className=" text-center text-2xl font-semibold">{ts.name}</h2>
+                      <p><FaStar className='inline mr-2'></FaStar>{ts.rating}</p>
+                      <p> <BiDollar className='inline ' ></BiDollar> {ts.price}</p>
+                      <div className="card-actions justify-center mt-3">
                         <Link to={`toy/${ts._id}`}>
                           {' '}
-                          <button className="btn  btn-warning">
+                          <button className="btn text-center btn-warning">
                             View Details
                           </button>
                         </Link>

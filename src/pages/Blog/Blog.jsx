@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Blog = () => {
-  useEffect(() => {
-    document.title = 'Speed Toy || Blog';
-  }, []);
   return (
     <div>
+      <div>
       <div>
         <h1>What is an access token and refresh token?</h1>
         <p>
@@ -85,9 +83,16 @@ const Blog = () => {
         
       </div>
       <div>
-        <h1></h1>
-        <p></p>
+        <h1>What is MongoDB aggregate and how does it work</h1>
+        <p>Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages. The stages make up as a pipeline
+        The input of the pipeline can be a single collection, where others can be merged later down the pipeline.
+
+The pipeline then performs successive transformations on the data until our goal is achieved.
+
+This way, we can break down a complex query into easier stages, in each of which we complete a different operation on the data
+        </p>
       </div>
+    </div>
     </div>
   );
 };

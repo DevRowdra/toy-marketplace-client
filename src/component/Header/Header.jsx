@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import UserProfile from '../UserProfile/UserProfile';
 import logo from '../../assets/logo.jpg'
@@ -45,23 +45,23 @@ logOutUser()
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-            <Link to={'/'}>Home</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'bg-amber-400' : 'inactive')} to={'/'}>Home</NavLink>
             </li>
             <li>
-            <Link to={'/alltoy'} >All Toy</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'bg-amber-400' : 'inactive')} to={'/alltoy'} >All Toy</NavLink>
             </li>
             <li>
-            <Link to={'/blog'} >Blog</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'bg-amber-400' : 'inactive')} to={'/blog'} >Blog</NavLink>
             </li>
            {user ?<>
             
             
            
             <li>
-            <Link to={'/mytoy'} >My Toy</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'bg-amber-400' : 'inactive')} to={'/mytoy'} >My Toy</NavLink>
             </li>
             <li>
-            <Link to={'/addatoy'} >Add A Toy</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'bg-amber-400' : 'inactive')} to={'/addatoy'} >Add A Toy</NavLink>
             </li>
             <li>
               <UserProfile></UserProfile>
@@ -83,23 +83,23 @@ logOutUser()
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-            <Link to={'/'}>Home</Link>
+            <NavLink to={'/'}  className={({ isActive }) => (isActive ? 'bg-amber-400' : 'inactive')}>Home</NavLink>
             </li>
             <li>
-            <Link to={'/alltoy'} >All Toy</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'bg-amber-400' : 'inactive')} to={'/alltoy'} >All Toy</NavLink>
             </li>
             <li>
-            <Link to={'/blog'} >Blog</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'bg-amber-400' : 'inactive')} to={'/blog'} >Blog</NavLink>
             </li>
            {user ?<>
             
             
            
             <li>
-            <Link to={'/mytoy'} >My Toy</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'bg-amber-400' : 'inactive')} to={'/mytoy'} >My Toy</NavLink>
             </li>
             <li>
-            <Link to={'/addatoy'} >Add A Toy</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'bg-amber-400' : 'inactive')} to={'/addatoy'} >Add A Toy</NavLink>
             </li>
             <li>
               <UserProfile></UserProfile>
