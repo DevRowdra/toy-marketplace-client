@@ -1,35 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Blog = () => {
+  useEffect(() => {
+    document.title = 'Speed Toy || Blog';
+  }, []);
   return (
     <div>
-      <div>
-      <div>
-        <h1>What is an access token and refresh token?</h1>
-        <p>
-          Access token and a refresh token are commonly used in authentication
-          and authorization systems to protected resources
+      <div className="hero min-h-screen bg-base-200">
+  <div className=" text-center">
+    <div className="">
+      <h1 className="text-5xl font-bold">What is an access token and refresh token?</h1>
+      <p>Access token and a refresh token are commonly used in authentication
+          and authorization systems to protected resources</p>
+      <div className='grid grid-cols-2'>
+        <div>
+          <h4 className="text-2xl">Access token</h4>
           <p>
             <span className="text-xl">Access token</span> : use to access users
             data from Database. it specific the user and it behavior and give
             the user his specific data. it has an expiration time.When its over
             the token can't work.
           </p>
+        </div>
+        <div>
+          <h4 className="text-2xl">Refresh Token</h4>
           <p>
             <span className="text-xl">Refresh Token</span> : A refresh token is
             a long-lived credential that is used to generate a new access
             token.it works when the original access token expires. it create a
             new Access token and give it to the user .
           </p>
-        </p>
-      </div>
-      <div>
-        <h1>
+        </div>
+        <div className='col-span-2 mt-5'>
+        <h1 className='text-lg'>
           How do they work and where should we store them on the client-side?
         </h1>
-        <p>
+        </div>
+        <div>
+          <h4 className="text-2xl">Refresh Token</h4>
           <p>
-            <span className="text-xl">Access token</span> :When a user
+            <span className="text-xl">Access token</span> : :When a user
             successfully logs in or authorizes access, an access token is issued
             by the authentication server.when the user login successfully the
             access token go to the server and give accesstoken to database if
@@ -37,6 +47,9 @@ const Blog = () => {
             access tokens in a secure manner on the client-side. Common
             developer storing them in an HTTP-only cookie.
           </p>
+        </div>
+        <div>
+          <h4 className="text-2xl">Refresh Token</h4>
           <p>
             <span className="text-xl">Refresh Token</span> : A refresh token is
             a long-lived credential used to obtain a new access token.It works
@@ -46,24 +59,50 @@ const Blog = () => {
             higher risk if compromised. Storing them in an HTTP-only cookie is
             secure.
           </p>
-        </p>
-        
+        </div>
       </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<div className="hero min-h-screen bg-base-200">
+  <div className=" text-center">
+      <h1 className="text-5xl font-bold">Compare SQL and NoSQL databases?</h1>
+    <div className="grid grid-cols-2">
       <div>
-        <h1>Compare SQL and NoSQL databases?</h1>
-        <ul>
-            <h1>SQL</h1>
+      <ul>
+            <h1 className='mt-5 text-lg'>SQL</h1>
             <li>It follow a structured data model known as the relational model. Data is organized into tables with predefined schemas .</li>
             <li>It enforce a schema, which defines the structure of the data and the relationships between tables. </li>
             <li>It typically scale vertically by adding more resources to a single server.</li>
             <li></li>
         </ul>
-        <ul>
-            <h1>NoSQL</h1>
+      </div>
+      <div>
+      <ul>
+            <h1 className='mt-5 text-lg'>NoSQL</h1>
             <li>It utilize various data models. such as key-value, document, columnar, or graph. They offer flexibility in storing unstructured or semi-structured data</li>
             <li>It is schema-less or have a flexible schema. They allow dynamic and agile development by enabling the storage of data without a predefined structure</li>
             <li>It designed to scale horizontally, making it easier to distribute data across multiple servers. </li>
             <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div>
+    
+     
+      <div>
+        <h1></h1>
+        
+        <ul>
+            <h1>NoSQL</h1>
+            
         </ul>
       </div>
       <div>
