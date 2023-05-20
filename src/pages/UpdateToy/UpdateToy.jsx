@@ -4,46 +4,40 @@ import { useLoaderData } from 'react-router-dom';
 const UpdateToy = () => {
   const toy = useLoaderData();
   const {
-    
-   
     description,
     quantity,
     price,
-    
+
     name,
     _id,
   } = toy;
   console.log(toy);
-  useEffect(()=>{
-    document.title='Speed Toy || UpdateToy'
-  },[])
+  useEffect(() => {
+    document.title = 'Speed Toy || UpdateToy';
+  }, []);
   const handleUpdateToy = (e) => {
-
-e.preventDefault()
-const form=e.target
-const  price=form.price.value
-const description=form.description.value
-const quantity=form.quantity.value
-const updateToy={
-    price,
-    quantity,
-    description
-}
-console.log(updateToy)
-fetch(`http://localhost:3000/toy/${_id}`,{
-    method:'PUT',
-    headers:{
-        "content-type":"application/json"
-    },
-    body:JSON.stringify(updateToy)
-})
-.then(res=>res.json())
-.then(data=>{
-    console.log(data)
-})
-
-
-
+    e.preventDefault();
+    const form = e.target;
+    const price = form.price.value;
+    const description = form.description.value;
+    const quantity = form.quantity.value;
+    const updateToy = {
+      price,
+      quantity,
+      description,
+    };
+    console.log(updateToy);
+    fetch(`https://toy-marketplace-server-livid.vercel.app/toy/${_id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(updateToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
   return (
     <div>
@@ -64,7 +58,6 @@ fetch(`http://localhost:3000/toy/${_id}`,{
                 name="price"
                 defaultValue={price}
                 placeholder="Enter Price"
-                
                 className="w-full px-3 py-2 border border-gray-300 rounded"
               />
             </div>
@@ -82,7 +75,6 @@ fetch(`http://localhost:3000/toy/${_id}`,{
                 name="quantity"
                 defaultValue={quantity}
                 placeholder="Enter Available quantity"
-              
                 className="w-full px-3 py-2 border border-gray-300 rounded"
               />
             </div>

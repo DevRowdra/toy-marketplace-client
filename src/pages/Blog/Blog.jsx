@@ -69,8 +69,20 @@ const Blog = () => {
         </ul>
       </div>
       <div>
-        <h1></h1>
-        <p></p>
+        <h1>
+        What is express js? What is Nest JS 
+        </h1>
+        <p>
+          <p>
+            <span className="text-xl">Express js</span> :Express.j is a popular web application framework for Node.js.A runtime environment for executing JavaScript code outside of a web browser. Express.js provides us  set of features and utilities for building web applications and Apis. It simplifies  the process of make web application.
+            It   used in building web applications, Restful Apis, and real-time applications.
+          </p>
+          <p>
+            <span className="text-xl">Nest JS</span> : a powerful open-source framework for building server-side applications . It using TypeScript.
+            It is usually  referred to as a "progressive" Node.js framework.Because it combines elements from different architectures and design patterns, including Object-Oriented Programming , Functional Programming , and Reactive Programming. It can work    various HTTP framework  frameworks like Express.js and Fastify. 
+          </p>
+        </p>
+        
       </div>
       <div>
         <h1></h1>

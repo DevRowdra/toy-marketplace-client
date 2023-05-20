@@ -33,7 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/mytoy/:id',
         element: <UpdateToy></UpdateToy>,
-        loader: ({ params }) => fetch(`http://localhost:3000/toy/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://toy-marketplace-server-livid.vercel.app/toy/${params.id}`
+          ),
       },
       {
         path: '/alltoy',
@@ -65,11 +68,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/blog',
-        element: (
-          
-            <Blog></Blog>
-         
-        ),
+        element: <Blog></Blog>,
       },
     ],
   },

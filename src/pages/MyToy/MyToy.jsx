@@ -1,17 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import MyToyRow from '../../component/MyToyRow/MyToyRow';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 const MyToy = () => {
   const { user } = useContext(AuthContext);
   const [myToy, setMyToy] = useState([]);
   // console.log(user);
-  const urls=(`http://localhost:3000/mytoys/${user?.email}`)
+  const urls = `https://toy-marketplace-server-livid.vercel.app/mytoys/${user?.email}`;
   useEffect(() => {
-   
-      document.title='Speed Toy || MyToy'
-  
+    document.title = 'Speed Toy || MyToy';
+
     fetch(urls)
       .then((res) => res.json())
       .then((data) => {
@@ -19,50 +18,41 @@ const MyToy = () => {
         setMyToy(data);
       });
   }, [user]);
-  const handleUpdateToy=(id)=>{
-    console.log(id)
-  }
-  const handleMyToyDelete=(id)=>{
-
-   
-    
-   
-
-
-
-    fetch(`http://localhost:3000/toy/${id}`,{
-      method:'DELETE'
+  const handleUpdateToy = (id) => {
+    console.log(id);
+  };
+  const handleMyToyDelete = (id) => {
+    fetch(`https://toy-marketplace-server-livid.vercel.app/toy/${id}`, {
+      method: 'DELETE',
     })
-    .then(res=>res.json())
-    .then(data=>{
-      // console.log(data)
-      // const filtering=myToy.filter(toy=> toy._id !== id)
-      // setMyToy(filtering)
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-
-          console.log(data)
-          const filtering=myToy.filter(toy=> toy._id !== id)
-          setMyToy(filtering)
-          Swal.fire(
-            'Deleted Confirm!',
-            'Your file has been deleted.Success Fully',
-            'success'
-          )
-        }
-      })
-      
-    })
-    console.log(id)
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data)
+        // const filtering=myToy.filter(toy=> toy._id !== id)
+        // setMyToy(filtering)
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log(data);
+            const filtering = myToy.filter((toy) => toy._id !== id);
+            setMyToy(filtering);
+            Swal.fire(
+              'Deleted Confirm!',
+              'Your file has been deleted.Success Fully',
+              'success'
+            );
+          }
+        });
+      });
+    console.log(id);
+  };
   return (
     <div>
       <div className="overflow-x-auto">
@@ -81,7 +71,14 @@ const MyToy = () => {
             </tr>
           </thead>
           <tbody>
-           {myToy.map(toy=><MyToyRow key={toy._id} handleMyToyDelete={handleMyToyDelete} handleUpdateToy={handleUpdateToy} toy={toy}></MyToyRow>)}
+            {myToy.map((toy) => (
+              <MyToyRow
+                key={toy._id}
+                handleMyToyDelete={handleMyToyDelete}
+                handleUpdateToy={handleUpdateToy}
+                toy={toy}
+              ></MyToyRow>
+            ))}
           </tbody>
         </table>
       </div>
