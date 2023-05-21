@@ -17,6 +17,10 @@ const ReactTabs = () => {
         setTest(data);
       });
   }, [tabItem]);
+  const handleViewDetails = (id) => {
+    // Show alert when "View Details" button is clicked
+    alert(`View details clicked for item with ID ${id}`);
+  };
   return (
     <div>
       <Tabs
@@ -64,7 +68,8 @@ const ReactTabs = () => {
                         <div className="card-actions justify-center mt-3">
                           <Link to={`toy/${ts._id}`}>
                             {' '}
-                            <button className="btn text-center btn-warning">
+                            <button className="btn text-center btn-warning"
+                            >
                               View Details
                             </button>
                           </Link>
