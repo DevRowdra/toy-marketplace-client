@@ -10,7 +10,7 @@ const ResentPost = () => {
     //   bookData
     const[blogData,setBlogData]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:3000/blog')
+        fetch('https://toy-marketplace-server-livid.vercel.app/blog')
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
