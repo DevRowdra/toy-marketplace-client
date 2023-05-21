@@ -10,9 +10,12 @@ const MyToy = () => {
   console.log(sortDirection);
 
   useEffect(() => {
+
     fetchData();
   }, [sortDirection]);
-
+useEffect(()=>{
+  document.title="Speed Toy || MyToy"
+},[])
   const fetchData = async () => {
     try {
       const email = user?.email;
