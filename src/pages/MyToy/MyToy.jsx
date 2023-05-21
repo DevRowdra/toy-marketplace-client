@@ -16,7 +16,7 @@ const MyToy = () => {
   const fetchData = async () => {
     try {
       const email = user.email;
-      const url = `http://localhost:3000/terstToy?email=${email}&sort=${sortDirection}`;
+      const url = `https://toy-marketplace-server-livid.vercel.app/terstToy?email=${email}&sort=${sortDirection}`;
       console.log(url);
       const response = await fetch(url);
       const data = await response.json();
@@ -32,7 +32,7 @@ const MyToy = () => {
 
   // try to do
 
-  const urls = `http://localhost:3000/terstToy/${user?.email}`;
+  const urls = `https://toy-marketplace-server-livid.vercel.app/terstToy/${user?.email}`;
 
   useEffect(() => {
     document.title = 'Speed Toy || MyToy';

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import GoogleLogin from '../../component/GoogleLogin/GoogleLogin';
-
+import Swal from 'sweetalert2';
 const Register = () => {
   const {createUser,setPhoto,setUserName}=useContext(AuthContext)
   const navigate=useNavigate()
@@ -37,7 +37,12 @@ const Register = () => {
     })
     .then(()=>{
       console.log('update user name')
-      alert('user updated')
+      Swal.fire({
+        icon: 'success',
+        title: 'User Register Successfully',
+        showConfirmButton: false,
+        timer: 1500,
+      });
       setPhoto(photo)
       setUserName(name)
       

@@ -52,11 +52,11 @@ const Login = () => {
           </label>
           <input type="text" placeholder="password" className="input input-bordered" name='password' required />
           <label className="label">
-            <Link to={'/register'} className="label-text-alt link link-hover">Already Have An Account.Login Now.</Link>
+            <Link to={'/register'} className="label-text-alt link link-hover">Don't Have any Account Register Now</Link>
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <button className="btn btn-primary">Login</button>
         </div>
       </form>
       <GoogleLogin frome={frome}></GoogleLogin>
