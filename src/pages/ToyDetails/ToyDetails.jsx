@@ -24,15 +24,22 @@ const ToyDetails = () => {
         />
       </div>{' '}
       <div className="shadow-2xl p-5 rounded-lg">
-        <h1 className="text-5xl font-bold">{singleToy.name}</h1>
+        <span className='text-lg font-semibold'>Toy Name:</span>
+        <hr class="w-24 h-1  my-4 bg-gray-100 border-0 rounded md:my-4 dark:bg-gray-700"></hr>
+         <h1 className="text-5xl font-bold text-red-400">{singleToy.name}</h1> 
+        
 
-        <p className="py-6">Seller: {singleToy.sellerName}</p>
-        <p className="py-6">Sub-category:{singleToy.subCategory}</p>
-        <p className="py-6">Seller Email: {singleToy.sellerEmail}</p>
-        <p className="py-6">Price: {singleToy.price}</p>
-        <p className="py-6">Rating: {singleToy.rating}</p>
-        <p className="py-6">Available Quantity: {singleToy.quantity}</p>
-        <p className="py-6">Detail Description: {singleToy.description}</p>
+        <p className="py-6">Seller:<span className='text-xl ms-5 hover:text-red-400'>{singleToy.sellerName} </span> </p>
+        <p className="py-6">Sub-category:<span className='text-xl ms-5 hover:text-red-400'>{singleToy.subCategory} </span></p>
+        <p className="py-6">Seller Email: <span className='text-xl ms-5 hover:text-red-400'>{singleToy.sellerEmail} </span></p>
+        <p className="py-6">Price: <span className='text-3xl ms-5 hover:text-red-400'>{singleToy.price} $</span> </p>
+        <p className="py-6">Rating: <span className='text-3xl ms-5 hover:text-red-400'>{singleToy.rating}</span> </p>
+        <p className="py-6">Available Quantity:<span className='ms-5 text-2xl'> {singleToy.quantity}</span> </p>
+        <span>
+
+        </span>
+        <p className="py-6"> <span className='block text-lg'>Detail Description:</span>
+        <hr class="w-48 h-1  my-4 bg-gray-100 border-0 rounded md:my-4 dark:bg-gray-700"></hr> {singleToy.description}</p>
       </div>
     </div>
   );
