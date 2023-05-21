@@ -5,6 +5,7 @@ import { updateProfile } from 'firebase/auth';
 import GoogleLogin from '../../component/GoogleLogin/GoogleLogin';
 import Swal from 'sweetalert2';
 const Register = () => {
+  const [error, setError] = useState('');
   const {createUser,setPhoto,setUserName}=useContext(AuthContext)
   const navigate=useNavigate()
   useEffect(()=>{
@@ -27,6 +28,7 @@ const Register = () => {
       navigate('/')
     })
     .catch(error=>{
+      setError(error.message);
       console.log(error)
     })
   };
@@ -119,6 +121,7 @@ const Register = () => {
                   </Link>
                 </label>
               </div>
+              <p className="text-red-500">{error}</p>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Register Now</button>
               </div>

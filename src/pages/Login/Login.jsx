@@ -1,10 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import GoogleLogin from '../../component/GoogleLogin/GoogleLogin';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-
+  const [error, setError] = useState('');
   const{loginUser}=useContext(AuthContext)
   const location=useLocation()
   console.log(location)
@@ -23,9 +24,16 @@ const Login = () => {
       .then(result=>{
         const userCu=result.user
         console.log(userCu)
+        Swal.fire({
+          icon: 'success',
+          title: 'Log In Successfully.',
+          showConfirmButton: false,
+          timer: 1500,
+        });
         navigate(frome || { replace: true })
       })
       .catch(error=>{
+        setError(error.message);
         console.log(error.message)
       })
     }
@@ -55,6 +63,7 @@ const Login = () => {
             <Link to={'/register'} className="label-text-alt link link-hover">Don't Have any Account Register Now</Link>
           </label>
         </div>
+        <p className="text-red-500">{error}</p>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
