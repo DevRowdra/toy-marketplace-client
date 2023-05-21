@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 const Gallery = () => {
     useEffect(() => {
-        AOS.init({ duration: 500, easing: 'ease-out', once: true });
+        AOS.init({ duration: 500,multiple:true, easing: 'ease-out', once: true });
       }, []);
   return (
     <div className="mt-11">

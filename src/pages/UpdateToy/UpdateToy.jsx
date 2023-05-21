@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 const UpdateToy = () => {
   const toy = useLoaderData();
@@ -12,6 +12,7 @@ const UpdateToy = () => {
     _id,
   } = toy;
   console.log('hi', toy);
+  const Navigate=useNavigate()
   useEffect(() => {
     document.title = 'Speed Toy || UpdateToy';
   }, []);
@@ -43,7 +44,9 @@ const UpdateToy = () => {
             title: 'Your Toy info updated',
             showConfirmButton: false,
             timer: 1500,
+           
           });
+          Navigate(-1)
         }
       });
   };

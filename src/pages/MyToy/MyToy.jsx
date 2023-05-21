@@ -6,6 +6,8 @@ import Swal from 'sweetalert2';
 const MyToy = () => {
   const { user } = useContext(AuthContext);
   const [myToy, setMyToy] = useState([]);
+  const[value,setValue]=useState('price')
+  const[sort,setSort]=useState(1)
   // console.log(user);
   const urls = `https://toy-marketplace-server-livid.vercel.app/mytoys/${user?.email}`;
   useEffect(() => {
@@ -21,6 +23,7 @@ const MyToy = () => {
   const handleUpdateToy = (id) => {
     console.log(id);
   };
+  console.log(sort)
   const handleMyToyDelete = (id) => {
     fetch(`https://toy-marketplace-server-livid.vercel.app/toy/${id}`, {
       method: 'DELETE',
@@ -56,6 +59,16 @@ const MyToy = () => {
   return (
     <div>
       <div className="overflow-x-auto">
+      {/* <select className="select w-full max-w-xs">
+  <option disabled selected>Pick your favorite Simpson</option>
+  <option>Homer</option>
+  <option>Marge</option>
+  <option>Bart</option>
+  <option>Lisa</option>
+  <option>Maggie</option>
+</select> */}
+        {/* <button className='btn btn-warning' onClick={()=>{setSort(1),setValue(1)}}>as</button>
+        <button className='btn btn-warning' onClick={()=>{setSort('descending'),setValue('price')}}>DE</button> */}
         <table className="table table-compact w-full">
           <thead>
             <tr>
