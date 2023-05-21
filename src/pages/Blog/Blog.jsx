@@ -17,7 +17,7 @@ const Blog = () => {
               authentication and authorization systems to protected resources
             </p>
             <div className="grid grid-cols-2">
-              <div className='border border-zinc-500 rounded-lg m-2 p-3'>
+            <div className='border border-zinc-500 rounded-lg m-2 p-3 hover:bg-red-300 transform hover:scale-105 transition-all duration-300'>
                 <h4 className="text-2xl">Access token</h4>
                 <p>
                   <span className="text-xl">Access token</span> : use to access
@@ -26,7 +26,7 @@ const Blog = () => {
                   time.When its over the token can't work.
                 </p>
               </div>
-              <div className='border border-zinc-500 rounded-lg m-2 p-3'>
+              <div className='border border-zinc-500 rounded-lg m-2 p-3 hover:bg-red-300 transform hover:scale-105 transition-all duration-300'>
                 <h4 className="text-2xl">Refresh Token</h4>
                 <p>
                   <span className="text-xl">Refresh Token</span> : A refresh
@@ -42,7 +42,7 @@ const Blog = () => {
                   client-side?
                 </h1>
               </div>
-              <div className='border border-zinc-500 rounded-lg m-2 p-3'>
+              <div className='border border-zinc-500 rounded-lg m-2 p-3 hover:bg-red-300 transform hover:scale-105 transition-all duration-300'>
                 <h4 className="text-2xl">Refresh Token</h4>
                 <p>
                   <span className="text-xl">Access token</span> : :When a user
@@ -55,7 +55,7 @@ const Blog = () => {
                   HTTP-only cookie.
                 </p>
               </div>
-              <div className='border border-zinc-500 rounded-lg m-2 p-3'>
+              <div className='border border-zinc-500 rounded-lg m-2 p-3 hover:bg-red-300 transform hover:scale-105 transition-all duration-300'>
                 <h4 className="text-2xl">Refresh Token</h4>
                 <p>
                   <span className="text-xl">Refresh Token</span> : A refresh
@@ -78,7 +78,7 @@ const Blog = () => {
             Compare SQL and NoSQL databases?
           </h1>
           <div className="grid grid-cols-2">
-            <div className='border border-zinc-500 rounded-lg m-2 p-3'>
+          <div className='border border-zinc-500 rounded-lg m-2 p-3 hover:bg-red-300 transform hover:scale-105 transition-all duration-300'>
               <ul>
                 <h1 className="mt-5 text-lg">SQL</h1>
                 <li>
@@ -96,7 +96,7 @@ const Blog = () => {
                 <li></li>
               </ul>
             </div>
-            <div className='border border-zinc-500 rounded-lg m-2 p-3'>
+            <div className='border border-zinc-500 rounded-lg m-2 p-3 hover:bg-red-300 transform hover:scale-105 transition-all duration-300'>
               <ul>
                 <h1 className="mt-5 text-lg">NoSQL</h1>
                 <li>
@@ -125,7 +125,7 @@ const Blog = () => {
             What is express js? What is Nest JS?{' '}
           </h1>
           <div className="grid grid-cols-2">
-            <div className='border border-zinc-500 rounded-lg m-2 p-3'>
+          <div className='border border-zinc-500 rounded-lg m-2 p-3 hover:bg-red-300 transform hover:scale-105 transition-all duration-300'>
               <h1 className="mt-5 text-lg">What is express js?</h1>
               <p>
                 <span className="text-xl">Express js</span> :Express.j is a
@@ -137,7 +137,7 @@ const Blog = () => {
                 applications, Restful Apis, and real-time applications.
               </p>
             </div>
-            <div className='border border-zinc-500 rounded-lg m-2 p-3'>
+            <div className='border border-zinc-500 rounded-lg m-2 p-3 hover:bg-red-300 transform hover:scale-105 transition-all duration-300'>
               <h1 className="mt-5 text-lg">What is Nest JS?</h1>
               <p>
                 <span className="text-xl">Nest JS</span> : a powerful
@@ -159,7 +159,7 @@ const Blog = () => {
             What is MongoDB aggregate and how does it work?
           </h1>
           
-            <div className='border border-zinc-500 rounded-lg  p-3 m-7'>
+          <div className='border border-zinc-500 rounded-lg m-2 p-3 hover:bg-red-300 transform hover:scale-105 transition-all duration-300 mt-5'>
               <p>
                 Aggregation is a way of processing a large number of documents
                 in a collection by means of passing them through different
