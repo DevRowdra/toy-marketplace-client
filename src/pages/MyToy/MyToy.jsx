@@ -15,7 +15,7 @@ const MyToy = () => {
 
   const fetchData = async () => {
     try {
-      const email = user.email;
+      const email = user?.email;
       const url = `https://toy-marketplace-server-livid.vercel.app/terstToy?email=${email}&sort=${sortDirection}`;
       console.log(url);
       const response = await fetch(url);
@@ -30,20 +30,11 @@ const MyToy = () => {
     setSortDirection(direction);
   };
 
-  // try to do
+// try to do
 
-  const urls = `https://toy-marketplace-server-livid.vercel.app/terstToy/${user?.email}`;
+  // const urls = `http://localhost:3000/terstToy/${user?.email}`;
 
-  useEffect(() => {
-    document.title = 'Speed Toy || MyToy';
-
-    fetch(urls)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setMyToy(data);
-      });
-  }, [user]);
+  
   const handleUpdateToy = (id) => {
     console.log(id);
   };
@@ -83,19 +74,10 @@ const MyToy = () => {
   return (
     <div>
       <div className="overflow-x-auto">
-        {/* <select className="select w-full max-w-xs">
-  <option disabled selected>Pick your favorite Simpson</option>
-  <option>Homer</option>
-  <option>Marge</option>
-  <option>Bart</option>
-  <option>Lisa</option>
-  <option>Maggie</option>
-</select> */}
-        {/* <button className='btn btn-warning' onClick={()=>{setSort(1),setValue(1)}}>as</button>
-        <button className='btn btn-warning' onClick={()=>{setSort('descending'),setValue('price')}}>DE</button> */}
-
-        <button
-          className="btn btn-warning"
+      
+<div className='text-center my-5 '>
+<button
+          className="btn btn-warning mx-3"
           onClick={() => handleSort('asc')}
         >
           Sort Ascending
@@ -108,6 +90,8 @@ const MyToy = () => {
         >
           Sort Descending
         </button>
+</div>
+       
 
         <table className="table table-compact w-full">
           <thead>

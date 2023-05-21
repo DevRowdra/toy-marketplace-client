@@ -16,7 +16,7 @@ const AddAToy = () => {
     const sellerName = form.sellerName.value;
     const sellerEmail = form?.sellerEmail?.value;
     const subCategory = form.subCategory.value;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value)
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.quantity.value;
