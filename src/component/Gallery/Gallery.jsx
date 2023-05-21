@@ -8,6 +8,7 @@ const Gallery = () => {
   return (
     <div className="mt-11">
         <h1 data-aos="zoom-out-down" className='text-center font-semibold text-7xl mb-7 text-red-400'>Toy Gallery</h1>
+        <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
       
       <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-2 ">
         <div data-aos="fade-up"

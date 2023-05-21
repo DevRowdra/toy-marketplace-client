@@ -27,7 +27,7 @@ const UpdateToy = () => {
       description,
     };
     console.log(updateToy);
-    fetch(`http://localhost:3000/toy/${_id}`, {
+    fetch(`https://toy-marketplace-server-livid.vercel.app/toy/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

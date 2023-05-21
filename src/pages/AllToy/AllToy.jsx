@@ -15,7 +15,7 @@ const AllToy = () => {
       });
   }, []);
  const handleSearch=()=>{
-  fetch(`http://localhost:3000/searchToyName/${searchText}`)
+  fetch(`https://toy-marketplace-server-livid.vercel.app/searchToyName/${searchText}`)
   .then((res) => res.json())
   .then((data) => {
     setAllToy(data);
@@ -33,7 +33,9 @@ const AllToy = () => {
       <button className="btn rounded-md btn-warning   " onClick={handleSearch}>Search</button>
       </dir>
 
+<div>
 
+</div>
 
 
       <div className="overflow-x-auto w-full">
