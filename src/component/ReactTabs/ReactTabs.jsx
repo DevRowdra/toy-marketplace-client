@@ -28,7 +28,7 @@ const ReactTabs = () => {
         defaultIndex={1}
       >
         <TabList className="text-center my-10">
-          <Tab className="text-3xl  font-semibold">Shop by Category</Tab>
+          <Tab className="text-3xl text-red-400  font-semibold">Shop by Category</Tab>
           <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
         </TabList>
         <TabPanel>
@@ -57,13 +57,14 @@ const ReactTabs = () => {
                         <h2 className=" text-center text-2xl font-semibold">
                           {ts.name}
                         </h2>
-                        <p>
-                          <FaStar className="inline mr-2"></FaStar>
-                          {ts.rating}
-                        </p>
+                       
                         <p>
                           {' '}
                           <BiDollar className="inline "></BiDollar> {ts.price}
+                        </p>
+                        <p>
+                          <FaStar className="inline mr-2"></FaStar>
+                          {ts.rating}
                         </p>
                         <div className="card-actions justify-center mt-3">
                           <Link to={`toy/${ts._id}`}>
@@ -97,13 +98,14 @@ const ReactTabs = () => {
                         <h2 className=" text-center text-2xl font-semibold">
                           {ts.name}
                         </h2>
-                        <p>
-                          <FaStar className="inline mr-2"></FaStar>
-                          {ts.rating}
-                        </p>
+                       
                         <p>
                           {' '}
                           <BiDollar className="inline "></BiDollar> {ts.price}
+                        </p>
+                        <p>
+                          <FaStar className="inline mr-2"></FaStar>
+                          {ts.rating}
                         </p>
                         <div className="card-actions justify-center mt-3">
                           <Link to={`toy/${ts._id}`}>
@@ -136,13 +138,14 @@ const ReactTabs = () => {
                         <h2 className=" text-center text-2xl font-semibold">
                           {ts.name}
                         </h2>
-                        <p>
-                          <FaStar className="inline mr-2"></FaStar>
-                          {ts.rating}
-                        </p>
+                        
                         <p>
                           {' '}
                           <BiDollar className="inline "></BiDollar> {ts.price}
+                        </p>
+                        <p>
+                          <FaStar className="inline mr-2"></FaStar>
+                          {ts.rating}
                         </p>
                         <div className="card-actions justify-center mt-3">
                           <Link to={`toy/${ts._id}`}>
