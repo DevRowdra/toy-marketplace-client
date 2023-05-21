@@ -6,10 +6,34 @@ import Swal from 'sweetalert2';
 const MyToy = () => {
   const { user } = useContext(AuthContext);
   const [myToy, setMyToy] = useState([]);
-  const[value,setValue]=useState('price')
-  const[sort,setSort]=useState(1)
-  // console.log(user);
-  const urls = `https://toy-marketplace-server-livid.vercel.app/mytoys/${user?.email}`;
+  const [sortDirection, setSortDirection] = useState('asc');
+  console.log(sortDirection);
+
+  useEffect(() => {
+    fetchData();
+  }, [sortDirection]);
+
+  const fetchData = async () => {
+    try {
+      const email = user.email;
+      const url = `http://localhost:3000/terstToy?email=${email}&sort=${sortDirection}`;
+      console.log(url);
+      const response = await fetch(url);
+      const data = await response.json();
+      setMyToy(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const handleSort = (direction) => {
+    setSortDirection(direction);
+  };
+
+  // try to do
+
+  const urls = `http://localhost:3000/terstToy/${user?.email}`;
+
   useEffect(() => {
     document.title = 'Speed Toy || MyToy';
 
@@ -23,7 +47,7 @@ const MyToy = () => {
   const handleUpdateToy = (id) => {
     console.log(id);
   };
-  console.log(sort)
+  // console.log(sort);
   const handleMyToyDelete = (id) => {
     fetch(`https://toy-marketplace-server-livid.vercel.app/toy/${id}`, {
       method: 'DELETE',
@@ -59,7 +83,7 @@ const MyToy = () => {
   return (
     <div>
       <div className="overflow-x-auto">
-      {/* <select className="select w-full max-w-xs">
+        {/* <select className="select w-full max-w-xs">
   <option disabled selected>Pick your favorite Simpson</option>
   <option>Homer</option>
   <option>Marge</option>
@@ -69,6 +93,22 @@ const MyToy = () => {
 </select> */}
         {/* <button className='btn btn-warning' onClick={()=>{setSort(1),setValue(1)}}>as</button>
         <button className='btn btn-warning' onClick={()=>{setSort('descending'),setValue('price')}}>DE</button> */}
+
+        <button
+          className="btn btn-warning"
+          onClick={() => handleSort('asc')}
+        >
+          Sort Ascending
+        </button>
+        <button
+          className="btn btn-warning"
+          onClick={() => {
+            handleSort('desc'), setSortDirection('des');
+          }}
+        >
+          Sort Descending
+        </button>
+
         <table className="table table-compact w-full">
           <thead>
             <tr>
