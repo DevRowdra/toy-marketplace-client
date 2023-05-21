@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import GoogleLogin from '../../component/GoogleLogin/GoogleLogin';
 import Swal from 'sweetalert2';
+import Lottie from "lottie-react";
+import loginAnimation from '../../assets/129750-login-orange.json'
 
 const Login = () => {
   const [error, setError] = useState('');
@@ -39,8 +41,12 @@ const Login = () => {
     }
    
     return (
-        <div>
-          <div className="hero min-h-screen bg-base-200">
+        <div className='grid grid-cols-2'>
+      <div>
+
+      <Lottie animationData={loginAnimation} loop={true} />
+      </div>
+      <div>    <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col  ">
     <div className="text-center  ">
       <h1 className="text-5xl font-bold">Login now!</h1>
@@ -71,7 +77,7 @@ const Login = () => {
       <GoogleLogin frome={frome}></GoogleLogin>
     </div>
   </div>
-</div>
+</div></div>
         </div>
     );
 };
